@@ -8,7 +8,8 @@
     "start": "react-native start",
     "pod": "cd ios; pod install; cd ..",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "svgr": "svgr ./src/icons -d ./src/components/icons --native --icon --svg-props width=24,height=24"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.0.9",
@@ -18,6 +19,7 @@
     "react-native": "0.66.3",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.0",
+    "react-native-svg": "^12.1.1",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
   },
@@ -25,6 +27,7 @@
     "@babel/core": "^7.16.0",
     "@babel/runtime": "^7.16.3",
     "@react-native-community/eslint-config": "^3.0.1",
+    "@svgr/cli": "^6.1.1",
     "babel-jest": "^27.4.2",
     "eslint": "^8.4.1",
     "jest": "^27.4.3",
