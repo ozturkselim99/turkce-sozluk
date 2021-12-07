@@ -12,6 +12,9 @@ import TabBar from "./components/tab-bar";
 import Box from "./components/box";
 import theme from "./utils/theme";
 import {SafeAreaProvider} from "react-native-safe-area-context/src/SafeAreaContext";
+import Button from "./components/button";
+import More from "./components/icons/More";
+import Left from "./components/icons/Left";
 
 
 
@@ -30,12 +33,44 @@ const HomeStack = createNativeStackNavigator();
 function SearchStack(){
     return(
         <HomeStack.Navigator
-            screenOptions={{
-                headerShown: false,
-            }}
+            screenOptions={{headerShadowVisible: false}}
         >
-            <HomeStack.Screen name="Search" component={SearchView}/>
-            <HomeStack.Screen name="Detail" component={DetailView}/>
+            <HomeStack.Screen
+                options={() => {
+                    return {
+                        headerShown: false,
+                    }
+                }}
+                name="Search" component={SearchView}/>
+            <HomeStack.Screen
+                options={({ route, navigation }) => {
+                    return {
+                        title:
+                            (route.params?.title ?? '').slice(0, 15) +
+                            ((route.params?.title ?? '').length > 15 ? '...' : ''),
+                        headerStyle: {
+                            backgroundColor: theme.colors.softRed,
+                        },
+                        headerTitleAlign:"center",
+                        headerLeft: () => (
+                            <Button
+                                height="100%"
+                                onPress={() => navigation.navigate('Search')}
+                            >
+                                <Left width={24} height={24} color={theme.colors.textDark} />
+                            </Button>
+                        ),
+                        headerRight: () => (
+                            <Button
+                                height="100%"
+                                onPress={() => navigation.navigate('Search')}
+                            >
+                                <More height={24} width={24} color={theme.colors.textDark} />
+                            </Button>
+                        ),
+                    }
+                }}
+                name="Detail" component={DetailView}/>
         </HomeStack.Navigator>
     )
 }
