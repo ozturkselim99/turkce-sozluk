@@ -1,10 +1,13 @@
-import {Text, View} from "react-native";
+import {Text, View,SafeAreaView} from "react-native";
 import * as React from "react";
+import Box from "../components/box";
+import FocusAwareStatusBar from "../components/focus-aware-status-bar";
 function HistoryView() {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Box as={SafeAreaView} flex={1}>
+            <FocusAwareStatusBar barStyle="dark-content"  />
             <Text>History</Text>
-        </View>
+        </Box>
     );
 }
 

@@ -12,7 +12,14 @@ import Bookmark from "./icons/Bookmark";
 
 function TabBar({state, descriptors, navigation}) {
     return (
-        <View style={{flexDirection: 'row',backgroundColor:"white"}}>
+        <View style={{
+            paddingBottom:20,
+            flexDirection: 'row',
+            backgroundColor:"white",
+            shadowColor: '#000',
+            shadowOpacity: 0.1,
+            shadowRadius: 24,
+        }}>
             {state.routes.map((route, index) => {
                 const {options} = descriptors[route.key];
 
@@ -55,9 +62,9 @@ function TabBar({state, descriptors, navigation}) {
                         height={56}
                         flex={1}
                         onPress={onPress}>
-                        {label === 'History' && <RotateCcw stroke={theme.colors.gray} />}
-                        {label === 'Favorite' && <Bookmark stroke={theme.colors.gray} />}
-                        <Box size={3} bg={isFocused ? 'red' : 'white'} mt={6} />
+                        {label === 'History' && <RotateCcw stroke={isFocused? theme.colors.red:theme.colors.gray} />}
+                        {label === 'Favorite' && <Bookmark stroke={isFocused? theme.colors.red:theme.colors.gray} />}
+                        <Box size={4} bg={isFocused ? 'red' : 'white'} mt={6} borderRadius={theme.radii.full} />
                     </Button>
                 );
             })}

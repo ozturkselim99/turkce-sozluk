@@ -11,6 +11,7 @@ import DetailView from "./views/detail";
 import TabBar from "./components/tab-bar";
 import Box from "./components/box";
 import theme from "./utils/theme";
+import {SafeAreaProvider} from "react-native-safe-area-context/src/SafeAreaContext";
 
 
 
@@ -28,7 +29,11 @@ const HomeStack = createNativeStackNavigator();
 
 function SearchStack(){
     return(
-        <HomeStack.Navigator>
+        <HomeStack.Navigator
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
             <HomeStack.Screen name="Search" component={SearchView}/>
             <HomeStack.Screen name="Detail" component={DetailView}/>
         </HomeStack.Navigator>
@@ -39,15 +44,19 @@ function SearchStack(){
 function App(){
     return(
         <ThemeProvider theme={theme}>
-            <Box flex={1} as={SafeAreaView}>
+            <SafeAreaProvider>
                 <NavigationContainer>
-                    <Tab.Navigator initialRouteName="Search" tabBar={props => <TabBar {...props} />}>
+                    <Tab.Navigator
+                        screenOptions={{
+                            headerShown: false,
+                        }}
+                        initialRouteName="Search" tabBar={props => <TabBar {...props} />}>
                         <Tab.Screen name="History" component={HistoryView} />
                         <Tab.Screen name="Search" component={SearchStack} />
                         <Tab.Screen name="Favorite" component={FavoriteView} />
                     </Tab.Navigator>
                 </NavigationContainer>
-            </Box>
+            </SafeAreaProvider>
         </ThemeProvider>
     )
 }

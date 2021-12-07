@@ -9,10 +9,12 @@ import theme from '../utils/theme'
 import Text from './text'
 import Button from './button'
 
-function SearchBox() {
+function SearchBox({onChangeFocus}) {
     const [value, setValue] = React.useState('')
     const [isFocus, setFocus] = React.useState(false)
-
+    React.useEffect(() => {
+        onChangeFocus(isFocus)
+    }, [isFocus, onChangeFocus])
     const onCancel = () => {
         setFocus(false)
         Keyboard.dismiss()
