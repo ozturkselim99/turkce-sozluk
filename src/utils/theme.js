@@ -17,12 +17,15 @@ const colors={
     textDark: '#0A151F',
     textMedium: '#48515B',
     textLight: '#758291',
-
+}
+const size={
+    actionButton:48
 }
 
 
 export default {
     space,
     radii,
-    colors
+    colors,
+    size
 }
