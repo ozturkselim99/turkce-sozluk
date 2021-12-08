@@ -1,8 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-
 import Button from './button';
-
 import Box from './box';
 
 import theme from '../utils/theme';

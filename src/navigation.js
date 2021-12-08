@@ -1,29 +1,18 @@
 import React from "react";
-import {Text, SafeAreaView, View} from "react-native"
+import {Text, View} from "react-native"
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import {ThemeProvider} from "styled-components";
 import SearchView from "./views/search";
 import HistoryView from "./views/history";
 import FavoriteView from "./views/favorite";
 import DetailView from "./views/detail";
 import TabBar from "./components/tab-bar";
-import Box from "./components/box";
 import theme from "./utils/theme";
-import {SafeAreaProvider} from "react-native-safe-area-context/src/SafeAreaContext";
 import Button from "./components/button";
 import More from "./components/icons/More";
 import Left from "./components/icons/Left";
 
-
-function SettingsScreen() {
-    return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <Text>Settings!</Text>
-        </View>
-    );
-}
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();

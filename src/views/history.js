@@ -1,4 +1,4 @@
-import {Text, View,SafeAreaView} from "react-native";
+import {Text,SafeAreaView} from "react-native";
 import * as React from "react";
 import Box from "../components/box";
 import FocusAwareStatusBar from "../components/focus-aware-status-bar";

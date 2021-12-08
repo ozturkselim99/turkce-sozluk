@@ -1,11 +1,8 @@
-import {Button, View, ActivityIndicator, SafeAreaView, StatusBar, Animated, FlatList} from "react-native";
+import {SafeAreaView} from "react-native";
 import * as React from "react";
 import Box from "../components/box";
-import Logo from "../components/icons/Logo";
-import Search from "../components/search";
 import FocusAwareStatusBar from "../components/focus-aware-status-bar";
 import theme from "../utils/theme";
-import Bg from "../components/bg";
 import SuggestionCard from "../components/suggestions-card";
 import SearchHistoryList from "../components/search-history-list";
 import HomeSearch from "../components/home-search";
@@ -56,13 +53,17 @@ function SearchView({navigation}) {
                     <Box px={16} py={40} flex={1}>
                         <SuggestionCard
                             data={homeData?.kelime[0]}
-                            onPress={() => navigation.navigate("Detail")}
+                            onPress={() => navigation.navigate("Detail",{
+                                title:homeData?.kelime[0].madde
+                            })}
                             title={"Bir Kelime"}
                         />
                         <SuggestionCard
                             mt={40}
                             data={homeData?.atasoz[0]}
-                            onPress={() => navigation.navigate("Detail")}
+                            onPress={() => navigation.navigate("Detail",{
+                                title:homeData?.atasoz[0].madde
+                            })}
                             title={"Bir deyim - Atasözü"}
                         />
                     </Box>
