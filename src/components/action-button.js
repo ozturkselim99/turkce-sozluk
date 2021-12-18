@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Button from './button'
-import Text from './text'
+import Button from './shared/button'
+import Text from './shared/text'
 import theme from "../utils/theme";
 
 function ActionButton({ children, ...props }) {

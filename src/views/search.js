@@ -1,6 +1,6 @@
 import {SafeAreaView} from "react-native";
 import * as React from "react";
-import Box from "../components/box";
+import Box from "../components/shared/box";
 import FocusAwareStatusBar from "../components/focus-aware-status-bar";
 import theme from "../utils/theme";
 import SuggestionCard from "../components/suggestions-card";

@@ -1,8 +1,8 @@
 import * as React from "react";
-import Text from "../components/text";
+import Text from "../components/shared/text";
 import {SafeAreaView, ScrollView} from "react-native";
 import FocusAwareStatusBar from "../components/focus-aware-status-bar";
-import Box from "../components/box";
+import Box from "../components/shared/box";
 import theme from "../utils/theme";
 import ActionButton, {ActionButtonTitle} from "../components/action-button";
 import Favorite from "../components/icons/Favorite";

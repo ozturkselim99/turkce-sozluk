@@ -1,6 +1,6 @@
 import {Animated} from "react-native";
 import Bg from "./bg";
-import Box from "./box";
+import Box from "./shared/box";
 import Logo from "./icons/Logo";
 import Search from "./search"
 import * as React from "react";

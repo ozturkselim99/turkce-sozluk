@@ -1,7 +1,7 @@
 import {FlatList} from "react-native";
-import Box from "./box";
+import Box from "./shared/box";
 import {SimpleCardContainer, SimpleCardTitle} from "./simple-card";
-import Text from "./text";
+import Text from "./shared/text";
 import theme from "../utils/theme";
 import * as React from "react";
 

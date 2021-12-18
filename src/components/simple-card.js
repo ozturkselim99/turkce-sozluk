@@ -1,7 +1,7 @@
 import React from "react";
-import Text from "./text";
+import Text from "./shared/text";
 import theme from "../utils/theme";
-import Button from "./button";
+import Button from "./shared/button";
 
 export function SimpleCardContainer({children,...props}) {
     return (<Button justifyContent={"flex-start"} p={16} bg="white" borderRadius={theme.radii.normal} {...props}>

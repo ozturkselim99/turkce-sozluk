@@ -9,7 +9,7 @@ import FavoriteView from "./views/favorite";
 import DetailView from "./views/detail";
 import TabBar from "./components/tab-bar";
 import theme from "./utils/theme";
-import Button from "./components/button";
+import Button from "./components/shared/button";
 import More from "./components/icons/More";
 import Left from "./components/icons/Left";
 

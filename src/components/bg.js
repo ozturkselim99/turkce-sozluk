@@ -1,4 +1,4 @@
-import Box from "./box";
+import Box from "./shared/box";
 import {ImageBackground} from "react-native";
 import bg from "../assets/bg.jpg";
 import * as React from "react";
