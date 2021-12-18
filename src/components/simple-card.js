@@ -1,21 +1,27 @@
-import React from "react";
-import Text from "./shared/text";
-import theme from "../utils/theme";
-import Button from "./shared/button";
+import React from 'react';
+import {Text, Button} from './shared';
 
-export function SimpleCardContainer({children,...props}) {
-    return (<Button justifyContent={"flex-start"} p={16} bg="white" borderRadius={theme.radii.normal} {...props}>
-            {children}
-    </Button>)
-}
+const SimpleCard = ({children, ...props}) => {
+  return (
+    <Button
+      justifyContent="flex-start"
+      bg="white"
+      borderRadius="normal"
+      p={16}
+      {...props}>
+      {children}
+    </Button>
+  );
+};
 
+const Title = ({children, ...props}) => {
+  return (
+    <Text fontSize={16} fontWeight="bold" {...props}>
+      {children}
+    </Text>
+  );
+};
 
-export function SimpleCardTitle({children}) {
-    return (
-        <Text fontSize={18} fontWeigth="bold">
-            {children}
-        </Text>
-    )
-}
+SimpleCard.Title = Title;
 
-
+export default SimpleCard;
