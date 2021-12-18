@@ -1,39 +1,39 @@
-import React from 'react'
+import React from 'react';
 
-import Button from './shared/button'
-import Text from './shared/text'
-import theme from "../utils/theme";
+import {Button, Text} from './shared';
 
-function ActionButton({ children, ...props }) {
-    return (
-        <Button
-            style={{
-                shadowColor: '#000',
-                shadowOpacity: 0.16,
-                shadowRadius: 4,
-                shadowOffset: {
-                    width: 0,
-                    height: 2
-                }
-            }}
-            minWidth={theme.size.actionButton}
-            height={theme.size.actionButton}
-            borderRadius={theme.radii.full}
-            bg="white"
-            px={8}
-            {...props}
-        >
-            {children}
-        </Button>
-    )
-}
+const ActionButton = ({children, ...props}) => {
+  return (
+    <Button
+      // eslint-disable-next-line react-native/no-inline-styles
+      style={{
+        shadowColor: '#000',
+        shadowOpacity: 0.16,
+        shadowRadius: 4,
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+      }}
+      minWidth="actionButton"
+      height="actionButton"
+      borderRadius="full"
+      bg="white"
+      px={8}
+      {...props}>
+      {children}
+    </Button>
+  );
+};
 
-export function ActionButtonTitle({ children, ...props }) {
-    return (
-        <Text color={theme.colors.textLight} fontWeight="bold" ml={8} mr={8} {...props}>
-            {children}
-        </Text>
-    )
-}
+const Title = ({children, ...props}) => {
+  return (
+    <Text color="textLight" fontWeight="bold" ml={8} mr={8} {...props}>
+      {children}
+    </Text>
+  );
+};
 
-export default ActionButton
+ActionButton.Title = Title;
+
+export default ActionButton;

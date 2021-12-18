@@ -1,20 +1,30 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import Navigation from './navigation';
-import {ThemeProvider} from 'styled-components';
-import theme from './utils/theme';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {HistoryProvider} from './context/history';
+import {ThemeProvider} from 'styled-components';
 
-function App() {
+import {HistoryProvider} from './context/history';
+import {HomeProvider} from './context/home';
+import {SearchProvider} from './context/search';
+
+import theme from './utils/theme';
+
+import Navigation from './navigation';
+
+const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
         <HistoryProvider>
-          <Navigation />
+          <HomeProvider>
+            <SearchProvider>
+              <Navigation />
+            </SearchProvider>
+          </HomeProvider>
         </HistoryProvider>
       </SafeAreaProvider>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

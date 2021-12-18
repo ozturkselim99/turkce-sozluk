@@ -1,32 +1,36 @@
-import React from 'react';
+import React, {useEffect, useState, useRef, useContext} from 'react';
 import {Keyboard} from 'react-native';
 
-import Box from './shared/box';
-import Input from './shared/input';
 import {Search, Close} from './icons';
 
+import {Box, Input, Text, Button} from './shared';
+
 import theme from '../utils/theme';
-import Text from './shared/text';
-import Button from './shared/button';
+import searchContext from '../context/search';
 
 function SearchBox({onChangeFocus}) {
-  const [value, setValue] = React.useState('');
+  const searchData = useContext(searchContext);
   const [isFocus, setFocus] = React.useState(false);
+
   React.useEffect(() => {
     onChangeFocus(isFocus);
   }, [isFocus, onChangeFocus]);
+
   const onCancel = () => {
+    searchData.setKeyword('');
     setFocus(false);
     Keyboard.dismiss();
   };
+
   const onClear = () => {
-    setValue('');
+    searchData.setKeyword('');
   };
 
   return (
     <Box flexDirection="row" alignItems="center">
       <Box position="relative" flex={1}>
         <Input
+          // eslint-disable-next-line react-native/no-inline-styles
           style={{
             shadowColor: '#000',
             shadowOpacity: 0.1,
@@ -45,11 +49,11 @@ function SearchBox({onChangeFocus}) {
           placeholderTextColor="textMedium"
           pl={52}
           borderRadius="normal"
-          value={value}
+          value={searchData.keyword}
           onFocus={() => setFocus(true)}
-          onChangeText={text => setValue(text)}
+          onChangeText={text => searchData.setKeyword(text)}
         />
-        {value.length > 0 && (
+        {searchData.keyword.length > 0 && (
           <Button onPress={onClear} position="absolute" right={16} top={14}>
             <Close color={theme.colors.textDark} />
           </Button>

@@ -8,7 +8,7 @@ import theme from '../utils/theme';
 const TabBar = ({state, descriptors, navigation}) => {
   return (
     <Box
-      pb={20}
+      pb={0}
       bg="white"
       flexDirection="row"
       // eslint-disable-next-line react-native/no-inline-styles

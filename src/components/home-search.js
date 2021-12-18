@@ -13,11 +13,13 @@ function HomeSearch({isSearchFocus, onSearchFocus}) {
       Animated.timing(heroHeight, {
         toValue: 52 + 32,
         duration: 320,
+        useNativeDriver: false,
       }).start();
     } else {
       Animated.timing(heroHeight, {
         toValue: 285,
         duration: 320,
+        useNativeDriver: false,
       }).start();
     }
   }, [heroHeight, isSearchFocus]);
