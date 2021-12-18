@@ -41,7 +41,7 @@ const SimpleItemList = ({
                   {
                     borderWidth: 1,
                     borderColor: '#F3A5B1',
-                    shadowColor: theme.colors.red,
+                    shadowColor: theme.colors.blue,
                     shadowOpacity: 0.16,
                     shadowRadius: 4,
                     shadowOffset: {
@@ -60,14 +60,14 @@ const SimpleItemList = ({
                   marginLeft="auto"
                   height={18}
                   width={18}
-                  color={theme.colors.red}
+                  color={theme.colors.blue}
                 />
               ) : (
                 <Circle
                   marginLeft="auto"
                   height={18}
                   width={18}
-                  color={theme.colors.red}
+                  color={theme.colors.blue}
                 />
               )
             ) : (
@@ -76,7 +76,7 @@ const SimpleItemList = ({
                   marginLeft="auto"
                   height={18}
                   width={18}
-                  color={theme.colors.red}
+                  color={theme.colors.blue}
                 />
               )
             )}

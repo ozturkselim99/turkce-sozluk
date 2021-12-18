@@ -25,7 +25,7 @@ export default function DetailSummaryItem({data, children, border, ...props}) {
             <Text color={theme.colors.light} ml={-14} mr={8}>
               {data.anlam_sira}
             </Text>
-            <Text color={theme.colors.red}>{type.join(', ')}</Text>
+            <Text color={theme.colors.blue}>{type.join(', ')}</Text>
           </Box>
           <Box mt={8}>
             <Text fontWeight="600">{data.anlam}</Text>

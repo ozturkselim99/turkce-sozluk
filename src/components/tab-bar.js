@@ -43,7 +43,7 @@ const TabBar = ({state, descriptors, navigation}) => {
         return label === 'Search' ? (
           // search button
           <Box key={label} p={15} mt={-15} bg="white" borderRadius="full">
-            <Button size={56} bg="red" borderRadius="full" onPress={onPress}>
+            <Button size={56} bg={theme.colors.blue} borderRadius="full" onPress={onPress}>
               <Search stroke="white" />
             </Button>
           </Box>
@@ -58,19 +58,19 @@ const TabBar = ({state, descriptors, navigation}) => {
             onPress={onPress}>
             {label === 'History' && (
               <RotateCcw
-                color={isFocused ? theme.colors.red : theme.colors.textLight}
+                color={isFocused ? theme.colors.blue : '#758291'}
               />
             )}
             {label === 'Favorite' && (
               <Bookmark
-                color={isFocused ? theme.colors.red : theme.colors.textLight}
+                color={isFocused ? theme.colors.blue : '#758291'}
               />
             )}
 
             {/* indicator */}
             <Box
               size={4}
-              bg={isFocused ? 'red' : 'white'}
+              bg={isFocused ? theme.colors.blue : 'white'}
               mt={6}
               borderRadius="full"
             />

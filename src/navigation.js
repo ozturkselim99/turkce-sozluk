@@ -1,5 +1,4 @@
 import React from 'react';
-import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -35,21 +34,21 @@ function SearchStack() {
               (route.params?.title ?? '').slice(0, 15) +
               ((route.params?.title ?? '').length > 15 ? '...' : ''),
             headerStyle: {
-              backgroundColor: theme.colors.softRed,
+              backgroundColor: theme.colors.softBlue,
             },
             headerTitleAlign: 'center',
             headerLeft: () => (
               <Button
                 height="100%"
-                onPress={() => navigation.navigate('Search')}>
-                <Left width={24} height={24} color={theme.colors.textDark} />
+                onPress={() => navigation.navigate('SearchMain')}>
+                <Left width={24} height={24} color={'white'} />
               </Button>
             ),
             headerRight: () => (
               <Button
                 height="100%"
-                onPress={() => navigation.navigate('Search')}>
-                <More height={24} width={24} color={theme.colors.textDark} />
+                onPress={() => navigation.navigate('SearchMain')}>
+                <More height={24} width={24} color={'white'} />
               </Button>
             ),
           };

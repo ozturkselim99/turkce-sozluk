@@ -10,18 +10,24 @@ import {SearchProvider} from './context/search';
 import theme from './utils/theme';
 
 import Navigation from './navigation';
+import {ResultsProvider} from './context/results';
+import {FavoriteProvider} from './context/favorite';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
-        <HistoryProvider>
-          <HomeProvider>
-            <SearchProvider>
-              <Navigation />
-            </SearchProvider>
-          </HomeProvider>
-        </HistoryProvider>
+        <FavoriteProvider>
+          <HistoryProvider>
+            <HomeProvider>
+              <SearchProvider>
+                <ResultsProvider>
+                  <Navigation />
+                </ResultsProvider>
+              </SearchProvider>
+            </HomeProvider>
+          </HistoryProvider>
+        </FavoriteProvider>
       </SafeAreaProvider>
     </ThemeProvider>
   );

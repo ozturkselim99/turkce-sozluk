@@ -30,7 +30,6 @@ function SearchBox({onChangeFocus}) {
     <Box flexDirection="row" alignItems="center">
       <Box position="relative" flex={1}>
         <Input
-          // eslint-disable-next-line react-native/no-inline-styles
           style={{
             shadowColor: '#000',
             shadowOpacity: 0.1,
@@ -64,7 +63,7 @@ function SearchBox({onChangeFocus}) {
       </Box>
       {isFocus && (
         <Button onPress={onCancel} px={15} height={52}>
-          <Text>Vazgeç</Text>
+          <Text color={'white'}>Vazgeç</Text>
         </Button>
       )}
     </Box>

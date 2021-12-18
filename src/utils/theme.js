@@ -4,8 +4,8 @@ const radii = {
   full: 9999,
 };
 const colors = {
-  red: '#E11E3C',
-  softRed: '#F8F8F8',
+  blue: '#104a8e',
+  softBlue: '#1357a6',
   light: '#E8EAED',
   gray: '#758291',
   birlesikKelimeDark: '#2E494C',
@@ -16,7 +16,7 @@ const colors = {
   atasozleriLight: '#F9F5F1',
   textDark: '#0A151F',
   textMedium: '#48515B',
-  textLight: '#758291',
+  textLight: 'white',
 };
 const size = {
   actionButton: 48,

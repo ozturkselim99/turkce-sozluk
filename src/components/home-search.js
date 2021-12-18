@@ -1,9 +1,9 @@
 import {Animated} from 'react-native';
 import Bg from './bg';
 import Box from './shared/box';
-import Logo from './icons/Logo';
 import Search from './search';
 import * as React from 'react';
+import {Text} from './shared';
 
 function HomeSearch({isSearchFocus, onSearchFocus}) {
   const heroHeight = React.useRef(new Animated.Value(285)).current;
@@ -28,7 +28,7 @@ function HomeSearch({isSearchFocus, onSearchFocus}) {
       {!isSearchFocus && (
         <Bg>
           <Box flex={1} alignItems="center" justifyContent="center">
-            <Logo width={120} color="white" />
+            <Text color={'white'} fontSize={30} fontWeight={'bold'}>Türkçe Sözlük</Text>
           </Box>
         </Bg>
       )}

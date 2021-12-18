@@ -45,11 +45,10 @@ const HistoryView = ({navigation}) => {
                 <Box py={30} mb={20}>
                   <Button
                     height={48}
-                    bg="red"
+                    bg="softBlue"
                     borderRadius="normal"
-                    // eslint-disable-next-line react-native/no-inline-styles
                     style={{
-                      shadowColor: theme.colors.red,
+                      shadowColor: theme.colors.blue,
                       shadowOpacity: 0.32,
                       shadowRadius: 12,
                       shadowOffset: {

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {Button, Text} from './shared';
+import theme from '../utils/theme';
 
 const ActionButton = ({children, ...props}) => {
   return (
@@ -15,9 +16,9 @@ const ActionButton = ({children, ...props}) => {
           height: 2,
         },
       }}
-      minWidth="actionButton"
-      height="actionButton"
-      borderRadius="full"
+      minWidth={theme.size.actionButton}
+      height={theme.size.actionButton}
+      borderRadius={theme.radii.full}
       bg="white"
       px={8}
       {...props}>
@@ -28,7 +29,12 @@ const ActionButton = ({children, ...props}) => {
 
 const Title = ({children, ...props}) => {
   return (
-    <Text color="textLight" fontWeight="bold" ml={8} mr={8} {...props}>
+    <Text
+      color={theme.colors.textDark}
+      fontWeight="bold"
+      ml={8}
+      mr={8}
+      {...props}>
       {children}
     </Text>
   );

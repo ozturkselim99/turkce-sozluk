@@ -29,19 +29,19 @@ function SearchView({navigation}) {
   return (
     <Box
       as={SafeAreaView}
-      bg={isSearchFocus ? theme.colors.softRed : theme.colors.red}
+      bg={isSearchFocus ? theme.colors.softBlue : theme.colors.blue}
       flex={1}>
       <FocusAwareStatusBar
-        barStyle={isSearchFocus ? 'dark-content' : 'light-content'}
+        barStyle={'light-content'}
         backgroundColor={
-          isSearchFocus ? theme.colors.softRed : theme.colors.red
+          isSearchFocus ? theme.colors.softBlue : theme.colors.blue
         }
       />
       <HomeSearch
         isSearchFocus={isSearchFocus}
         onSearchFocus={setSearchFocus}
       />
-      <Box flex={1} bg={theme.colors.softRed} pt={isSearchFocus ? 0 : 26}>
+      <Box flex={1} bg={theme.colors.softBlue} pt={isSearchFocus ? 0 : 26}>
         {isSearchFocus ? (
           <Box flex={1}>
             {searchData.keyword.length >= 3 ? (

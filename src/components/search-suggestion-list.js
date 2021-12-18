@@ -37,7 +37,6 @@ const SearchSuggestionList = ({keyword, data, onPress}) => {
   } else {
     return (
       <FlatList
-        // eslint-disable-next-line react-native/no-inline-styles
         style={{backgroundColor: 'white'}}
         data={data}
         keyExtractor={item => item.id + ''}
@@ -51,7 +50,7 @@ const SearchSuggestionList = ({keyword, data, onPress}) => {
                 marginLeft="auto"
                 height={18}
                 width={18}
-                color={theme.colors.red}
+                color={theme.colors.blue}
               />
             </SimpleCard>
           </Box>
