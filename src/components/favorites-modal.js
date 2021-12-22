@@ -48,8 +48,7 @@ const FavoritesModal = () => {
                     },
                   }
                 : {}
-            }
-            onPress={() => favorites.removeSelected()}>
+            }>
             <Box pb={2}>
               <Trash
                 color={

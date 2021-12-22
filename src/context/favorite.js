@@ -17,7 +17,7 @@ export const favoriteContextDefaults = {
 const favoriteContext = createContext(favoriteContextDefaults);
 
 const FavoriteProvider = ({children}) => {
-  const favorites_modal_ref = useRef();
+  //const favorites_modal_ref = useRef();
   const [favorites, setFavorites] = useState([]);
   const [selectedList, setSelectedList] = useState([]);
   const [isSelectable, setSelectable] = useState(false);
@@ -47,22 +47,22 @@ const FavoriteProvider = ({children}) => {
     setSelectable: status => {
       if (status !== undefined) {
         if (status === false) {
-          favorites_modal_ref.current.snapTo(1);
-          favorites_modal_ref.current.snapTo(1);
+          //favorites_modal_ref.current.snapTo(1);
+          //favorites_modal_ref.current.snapTo(1);
           setSelectedList([]);
         } else {
-          favorites_modal_ref.current.snapTo(0);
-          favorites_modal_ref.current.snapTo(0);
+          //favorites_modal_ref.current.snapTo(0);
+          //favorites_modal_ref.current.snapTo(0);
         }
         setSelectable(status);
       } else {
         if (!isSelectable === false) {
           setSelectedList([]);
-          favorites_modal_ref.current.snapTo(1);
-          favorites_modal_ref.current.snapTo(1);
+          //favorites_modal_ref.current.snapTo(1);
+          //favorites_modal_ref.current.snapTo(1);
         } else {
-          favorites_modal_ref.current.snapTo(0);
-          favorites_modal_ref.current.snapTo(0);
+          //favorites_modal_ref.current.snapTo(0);
+          //favorites_modal_ref.current.snapTo(0);
         }
         setSelectable(!isSelectable);
       }
@@ -104,8 +104,8 @@ const FavoriteProvider = ({children}) => {
           JSON.stringify({data: newFavorites}),
         );
         setSelectedList(false);
-        favorites_modal_ref.current.snapTo(1);
-        favorites_modal_ref.current.snapTo(1);
+        //favorites_modal_ref.current.snapTo(1);
+        //favorites_modal_ref.current.snapTo(1);
       } catch {
         console.log('error in multiple favorite remove async storage');
       }
@@ -115,13 +115,6 @@ const FavoriteProvider = ({children}) => {
   return (
     <favoriteContext.Provider value={favoriteValues}>
       {children}
-      <BottomSheet
-        ref={favorites_modal_ref}
-        enabledGestureInteraction={false}
-        snapPoints={[220, 0]}
-        initialSnap={1}
-        renderContent={() => <FavoritesModal />}
-      />
     </favoriteContext.Provider>
   );
 };

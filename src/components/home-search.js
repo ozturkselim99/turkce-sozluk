@@ -6,19 +6,19 @@ import * as React from 'react';
 import {Text} from './shared';
 
 function HomeSearch({isSearchFocus, onSearchFocus}) {
-  const heroHeight = React.useRef(new Animated.Value(285)).current;
+  const heroHeight = React.useRef(new Animated.Value(200)).current;
 
   React.useEffect(() => {
     if (isSearchFocus) {
       Animated.timing(heroHeight, {
         toValue: 52 + 32,
-        duration: 320,
+        duration: 235,
         useNativeDriver: false,
       }).start();
     } else {
       Animated.timing(heroHeight, {
-        toValue: 285,
-        duration: 320,
+        toValue: 200,
+        duration: 235,
         useNativeDriver: false,
       }).start();
     }

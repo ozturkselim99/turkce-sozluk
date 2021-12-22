@@ -1,4 +1,4 @@
-package com.turkcesozluk;
+package com.softurkcesozluk;
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 
